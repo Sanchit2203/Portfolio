@@ -9,19 +9,16 @@ import {
   Building,
   Calendar,
   Code,
-  Coffee,
   Cpu,
   Database,
   Download,
   Github,
-  HardDrive,
   Lightbulb,
   Linkedin,
   Mail,
   MapPin,
   Phone,
   School,
-  Star,
   Users,
   Award,
 } from "lucide-react";
@@ -38,14 +35,13 @@ const CppIcon = () => (
       viewBox="0 0 128 128"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
+      fill="currentColor"
     >
       <g>
         <path
-          fill="currentColor"
           d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c35.3 0 64-28.7 64-64S99.3 0 64 0zm0 120C32.2 120 8 95.8 8 64S32.2 8 64 8s56 24.2 56 56-24.2 56-56 56z"
         ></path>
         <path
-          fill="currentColor"
           d="M74.1 60.8h-7.9v-7.9h7.9v-7.8h-7.9v-7.9h7.9V29.3H50.5c-9.5 0-17.2 7.7-17.2 17.2v27.1c0 9.5 7.7 17.2 17.2 17.2h23.6v-7.9H50.5c-5.1 0-9.2-4.1-9.2-9.2V46.5c0-5.1 4.1-9.2 9.2-9.2h23.6v7.9zM94.7 60.8h-7.9v-7.9h7.9v-7.8h-7.9v-7.9h7.9V29.3H82.9v7.9h7.9v7.9h-7.9v7.8h7.9v7.9zm-7.9 15.7h7.9v-7.8h-7.9v7.8z"
         ></path>
       </g>
@@ -64,25 +60,47 @@ const CppIcon = () => (
     </svg>
   );
 
+  const JavaIcon = () => (
+    <svg
+      className="h-8 w-8 text-primary"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M12.33 4.09C11.66 4.04 11.2 4 10.5 4a6.5 6.5 0 0 0 0 13c.7 0 1.16-.04 1.83-.09.3-.02.47.23.47.5V18.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-1.09c0-.27.17-.52.47-.5.67.05 1.13.09 1.83.09a6.5 6.5 0 1 0-5.38-10.4c.06.33.4.5.68.5H15c.83 0 1.5-.67 1.5-1.5S15.83 4 15 4h-2.1c-.28 0-.62.17-.68.5.21.28.32.61.33.95v.05h-1.5V5.21c0-.24-.15-.46-.38-.54l-.04-.08zM10.5 15c-2.49 0-4.5-2.01-4.5-4.5S8.01 6 10.5 6s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"/>
+    </svg>
+  );
+  
+  const HtmlIcon = () => (
+    <svg
+      className="h-8 w-8 text-primary"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M1.016 0h21.968l-1.984 22.125-9.016 2.875-8.984-2.875-1.984-22.125zM18.141 6.563h-12.281l0.344 3.844h11.594l-0.453 5.063-4.016 1.078-3.984-1.078-0.281-3.141h3.766l0.172-1.922h-3.938l-0.703-7.859h10.375z" />
+    </svg>
+  );
+
 const skills = {
     programming: [
         { name: "Python", level: 90, icon: <PythonIcon /> },
         { name: "C/C++", level: 85, icon: <CppIcon /> },
-        { name: "Java", level: 80, icon: <Coffee className="h-8 w-8 text-primary" /> },
+        { name: "Java", level: 80, icon: <JavaIcon /> },
       ],
       web: [
-        { name: "HTML/CSS", level: 90, icon: <Code className="h-8 w-8 text-primary" /> },
+        { name: "HTML/CSS", level: 90, icon: <HtmlIcon /> },
         { name: "DBMS", level: 85, icon: <Database className="h-8 w-8 text-primary" /> },
       ],
   tools: [
     { name: "MS Office", level: 95 },
-    { name: "Project Management", level: 80, icon: <Briefcase className="h-8 w-8 text-primary" /> }, // Assuming Briefcase is suitable for Project Management
-    { name: "Hardware", level: 75, icon: <Cpu className="h-8 w-8 text-primary" /> }, // Using Cpu for Hardware
+    { name: "Project Management", level: 80, icon: <Briefcase className="h-8 w-8 text-primary" /> },
+    { name: "Hardware", level: 75, icon: <Cpu className="h-8 w-8 text-primary" /> },
   ],
   soft: [
     { name: "Team Work", level: 95, icon: <Users className="h-8 w-8 text-primary" /> },
     { name: "Time Management", level: 90, icon: <Calendar className="h-8 w-8 text-primary" /> },
-    { name: "Problem Solving", level: 85, icon: <Lightbulb className="h-8 w-8 text-primary" /> }, // Using Lightbulb for Problem Solving
+    { name: "Problem Solving", level: 85, icon: <Lightbulb className="h-8 w-8 text-primary" /> },
   ],
 };
 
