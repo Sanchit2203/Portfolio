@@ -29,76 +29,18 @@ import ResumeEnhancer from "@/components/resume-enhancer";
 import ContactForm from "@/components/contact-form";
 import ScrollTop from "@/components/scroll-top";
 
-const CppIcon = () => (
-    <svg
-        className="h-8 w-8"
-        viewBox="0 0 64 64"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path d="M32,1C14.88,1,1,14.88,1,32s13.88,31,31,31s31-13.88,31-31S49.12,1,32,1z" fill="#004482"/>
-        <g>
-            <path d="M42,26h-4v-4h4v-4h-4v-4h4V6H26c-5.52,0-10,4.48-10,10v14c0,5.52,4.48,10,10,10h16v-4H26c-3.31,0-6-2.69-6-6V16   c0-3.31,2.69-6,6-6h16V26z" fill="#ffffff"/>
-            <g>
-                <rect x="52" y="14" width="4" height="4" fill="#ffffff"/>
-                <rect x="52" y="20" width="4" height="4" fill="#ffffff"/>
-                <rect x="46" y="14" width="4" height="4" fill="#ffffff"/>
-                <rect x="46" y="20" width="4" height="4" fill="#ffffff"/>
-            </g>
-        </g>
-    </svg>
-);
-
-const PythonIcon = () => (
-    <svg
-        className="h-8 w-8"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-    >
-        <path fill="#3776AB" d="M14.232 2.221a4.994 4.994 0 00-4.994 4.995v2.23h4.462v2.229H7.012a2.766 2.766 0 01-2.766-2.766V4.453a2.766 2.766 0 012.766-2.766h9.453a2.23 2.23 0 012.23 2.23v.306h-2.23v-.306c0-.129-.105-.233-.233-.233h-6.988z" />
-        <path fill="#FFD43B" d="M9.768 21.779a4.994 4.994 0 004.994-4.995v-2.23h-4.462V12.33h7.188a2.766 2.766 0 012.766 2.766v4.456a2.766 2.766 0 01-2.766 2.766H5.244a2.23 2.23 0 01-2.23-2.23v-.307h2.23v.307c0 .129.105.233.233.233h6.988z" />
-    </svg>
-);
-
-
-const JavaIcon = () => (
-    <svg
-        className="h-8 w-8"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path fill="#5382a1" d="M18.43,8.93c-0.65,0-1.12,0.39-1.12,0.92c0,0.44,0.31,0.76,0.79,0.88c0.65,0.16,1.25,0.38,1.25,1.15c0,0.82-0.89,1.23-1.63,1.23c-0.82,0-1.55-0.34-1.92-0.84l-0.61,0.4c0.47,0.68,1.3,1.04,2.29,1.04c1.55,0,2.94-0.8,2.94-2.58C20.4,9.6,19.23,8.93,18.43,8.93z"></path>
-        <path fill="#f89820" d="M12.44,13.75l0.61-0.39c-0.33-0.53-0.8-0.78-1.42-0.78c-0.87,0-1.76,0.5-1.76,1.81c0,1.21,0.85,1.76,1.83,1.76c0.79,0,1.31-0.41,1.55-0.8l-0.63-0.39c-0.15,0.27-0.5,0.5-0.92,0.5c-0.57,0-0.96-0.34-0.96-0.95C11.34,14.07,11.75,13.62,12.44,13.75z"></path>
-        <path fill="#5382a1" d="M14.9,8.08h-2.18v8.32h1.99l0.01-3.41h0.1c0.26,0.78,0.98,1.19,1.72,1.19c1.55,0,2.69-1.28,2.69-3C19.23,9.25,17.43,8.08,14.9,8.08z M15.75,12.28c-0.63,0-1.15-0.45-1.15-1.19c0-0.75,0.52-1.2,1.15-1.2c0.6,0,1.08,0.45,1.08,1.2C16.83,11.83,16.35,12.28,15.75,12.28z"></path>
-        <path fill="#f89820" d="M8.28,8.08h-2.2v4.29c0,1.01,0.7,1.36,1.44,1.36c0.3,0,0.55-0.03,0.76-0.08v1.64c-0.3,0.08-0.73,0.13-1.09,0.13c-1.68,0-2.88-0.85-2.88-2.85V8.08H2.5v-1.5h5.78V8.08z"></path>
-    </svg>
-);
-  
-const HtmlIcon = () => (
-    <svg
-        className="h-8 w-8"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path d="M3,3 L21,3 L19.9,20.9 L12,23 L4.1,20.9 L3,3 Z" fill="#e34f26"/>
-        <path d="M12,5 L12,21.2 L18.5,19.6 L19.4,5 L12,5 Z" fill="#f16529"/>
-        <path d="M12,9.5 L12,12.5 L15.4,12.5 L15.1,16.2 L12,17.1 L12,14.1 L8.6,14.1 L8.4,11 L12,11 L12,9.5 Z" fill="#ebebeb"/>
-        <path d="M12,11 L8.5,11 L8.3,8.5 L12,8.5 L12,5.5 L4.9,5.5 L5.6,14.1 L12,15.9 L12,18.9 L6.2,17.3 L5.5,8.5 L12,8.5 Z" fill="#ffffff"/>
-    </svg>
-);
-
 const skills = {
     programming: [
-        { name: "Python", level: 90, icon: <PythonIcon /> },
-        { name: "C/C++", level: 85, icon: <CppIcon /> },
-        { name: "Java", level: 80, icon: <JavaIcon /> },
+        { name: "Python", level: 90, icon: <Code className="h-8 w-8 text-primary" /> },
+        { name: "C/C++", level: 85, icon: <Code className="h-8 w-8 text-primary" /> },
+        { name: "Java", level: 80, icon: <Code className="h-8 w-8 text-primary" /> },
       ],
       web: [
-        { name: "HTML/CSS", level: 90, icon: <HtmlIcon /> },
-        { name: "DBMS", level: 85, icon: <Database className="h-8 w-8 text-blue-500" /> },
+        { name: "HTML/CSS", level: 90, icon: <Code className="h-8 w-8 text-primary" /> },
+        { name: "DBMS", level: 85, icon: <Database className="h-8 w-8 text-primary" /> },
       ],
   tools: [
-    { name: "MS Office", level: 95 },
+    { name: "MS Office", level: 95, icon: <Briefcase className="h-8 w-8 text-primary" /> },
     { name: "Project Management", level: 80, icon: <Briefcase className="h-8 w-8 text-primary" /> },
     { name: "Hardware", level: 75, icon: <Cpu className="h-8 w-8 text-primary" /> },
   ],
