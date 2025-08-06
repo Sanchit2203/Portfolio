@@ -30,9 +30,9 @@ import ContactForm from "@/components/contact-form";
 import ScrollTop from "@/components/scroll-top";
 
 const CppIcon = () => (
-    <svg 
+    <svg
         className="h-8 w-8"
-        viewBox="0 0 64 64" 
+        viewBox="0 0 64 64"
         xmlns="http://www.w3.org/2000/svg"
     >
         <path d="M32,1C14.88,1,1,14.88,1,32s13.88,31,31,31s31-13.88,31-31S49.12,1,32,1z" fill="#004482"/>
@@ -73,9 +73,9 @@ const JavaIcon = () => (
 );
   
 const HtmlIcon = () => (
-    <svg 
+    <svg
         className="h-8 w-8"
-        viewBox="0 0 24 24" 
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
     >
         <path d="M3,3 L21,3 L19.9,20.9 L12,23 L4.1,20.9 L3,3 Z" fill="#e34f26"/>
@@ -237,6 +237,10 @@ export default function Home() {
                         {skills.web.map(skill => <SkillCard key={skill.name} {...skill} />)}
                     </div>
                     <div className="space-y-6">
+                        <h3 className="text-2xl font-headline text-accent text-center">Tools & Technologies</h3>
+                        {skills.tools.map(skill => <SkillCard key={skill.name} {...skill} />)}
+                    </div>
+                    <div className="space-y-6">
                         <h3 className="text-2xl font-headline text-accent text-center">Soft Skills</h3>
                         {skills.soft.map(skill => <SkillCard key={skill.name} {...skill} />)}
                     </div>
@@ -347,6 +351,11 @@ export default function Home() {
                     </CardContent>
                 </Card>
             </div>
+        </section>
+
+        <section id="ai-summary" className="py-20 px-4 container mx-auto animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <h2 className="text-4xl font-headline font-bold text-center mb-12 text-primary">Enhance Your Resume</h2>
+          <ResumeEnhancer />
         </section>
       </main>
 
