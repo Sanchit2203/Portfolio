@@ -4,22 +4,16 @@
  * @fileOverview A flow to generate a resume summary.
  *
  * - generateResumeSummary - A function that generates a resume summary.
- * - GenerateResumeSummaryInput - The input type for the generateResumeSummary function.
- * - GenerateResumeSummaryOutput - The return type for the generateResumeSummary function.
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { 
+  GenerateResumeSummaryInputSchema, 
+  GenerateResumeSummaryOutputSchema,
+  type GenerateResumeSummaryInput,
+  type GenerateResumeSummaryOutput
+} from '@/ai/schemas';
 
-export const GenerateResumeSummaryInputSchema = z.object({
-  resumeText: z.string().describe('The full text content of a resume.'),
-});
-export type GenerateResumeSummaryInput = z.infer<typeof GenerateResumeSummaryInputSchema>;
-
-export const GenerateResumeSummaryOutputSchema = z.object({
-  summary: z.string().describe('A 2-3 sentence professional summary based on the resume.'),
-});
-export type GenerateResumeSummaryOutput = z.infer<typeof GenerateResumeSummaryOutputSchema>;
 
 const resumePrompt = ai.definePrompt({
     name: 'resumeSummaryPrompt',

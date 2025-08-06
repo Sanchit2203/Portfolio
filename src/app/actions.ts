@@ -1,7 +1,8 @@
 
 'use server';
 
-import { generateResumeSummary, GenerateResumeSummaryInput } from '@/ai/flows/resume-summary-generator';
+import { generateResumeSummary } from '@/ai/flows/resume-summary-generator';
+import type { GenerateResumeSummaryInput } from '@/ai/schemas';
 
 interface ActionResult<T> {
   success: boolean;
