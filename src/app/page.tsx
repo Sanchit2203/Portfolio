@@ -298,13 +298,6 @@ export default function Home() {
                 </Card>
             </div>
         </section>
-
-        <section id="resume-enhancer" className="py-20 px-4 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <div className="container mx-auto">
-            <h2 className="text-4xl font-headline font-bold text-center mb-12 text-primary">Resume Summary Generator</h2>
-            <ResumeEnhancer />
-          </div>
-        </section>
       </main>
 
       <footer id="contact" className="bg-secondary py-12 px-4 animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
