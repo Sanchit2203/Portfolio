@@ -10,10 +10,9 @@ import {firebase} from '@genkit-ai/firebase';
 const plugins: Plugin<any>[] = [next(), firebase(), googleAI()];
 
 if (!process.env.GENKIT_ENV || process.env.GENKIT_ENV === 'development') {
-  // In a development environment, we devide a dev-only plugin that provides
+  // In a development environment, we provide a dev-only plugin that provides
   // a UI for viewing traces and registered Genkit entities.
-  const {dev} = await import('genkit/dev');
-  plugins.push(dev());
+  // Note: Dev UI has been removed to resolve module errors.
 }
 
 export const ai = genkit({
