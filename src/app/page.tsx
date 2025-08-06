@@ -9,6 +9,7 @@ import {
   Building,
   Calendar,
   Code,
+  Coffee,
   Cpu,
   Database,
   Download,
@@ -31,25 +32,57 @@ import ResumeEnhancer from "@/components/resume-enhancer";
 import ContactForm from "@/components/contact-form";
 import ScrollTop from "@/components/scroll-top";
 
+const CppIcon = () => (
+    <svg
+      className="h-8 w-8 text-primary"
+      viewBox="0 0 128 128"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid"
+    >
+      <g>
+        <path
+          fill="currentColor"
+          d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c35.3 0 64-28.7 64-64S99.3 0 64 0zm0 120C32.2 120 8 95.8 8 64S32.2 8 64 8s56 24.2 56 56-24.2 56-56 56z"
+        ></path>
+        <path
+          fill="currentColor"
+          d="M74.1 60.8h-7.9v-7.9h7.9v-7.8h-7.9v-7.9h7.9V29.3H50.5c-9.5 0-17.2 7.7-17.2 17.2v27.1c0 9.5 7.7 17.2 17.2 17.2h23.6v-7.9H50.5c-5.1 0-9.2-4.1-9.2-9.2V46.5c0-5.1 4.1-9.2 9.2-9.2h23.6v7.9zM94.7 60.8h-7.9v-7.9h7.9v-7.8h-7.9v-7.9h7.9V29.3H82.9v7.9h7.9v7.9h-7.9v7.8h7.9v7.9zm-7.9 15.7h7.9v-7.8h-7.9v7.8z"
+        ></path>
+      </g>
+    </svg>
+  );
+  
+  const PythonIcon = () => (
+    <svg 
+        className="h-8 w-8 text-primary"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M14.232 2.221a4.994 4.994 0 00-4.994 4.995v2.23h4.462v2.229H7.012a2.766 2.766 0 01-2.766-2.766V4.453a2.766 2.766 0 012.766-2.766h9.453a2.23 2.23 0 012.23 2.23v.306h-2.23v-.306c0-.129-.105-.233-.233-.233h-6.988zM9.768 21.779a4.994 4.994 0 004.994-4.995v-2.23h-4.462V12.33h7.188a2.766 2.766 0 012.766 2.766v4.456a2.766 2.766 0 01-2.766 2.766H5.244a2.23 2.23 0 01-2.23-2.23v-.307h2.23v.307c0 .129.105.233.233.233h6.988z" 
+        fill="currentColor"/>
+    </svg>
+  );
+
 const skills = {
-  programming: [
-    { name: "Python", level: 90, icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: "C/C++", level: 85, icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: "Java", level: 80, icon: <Code className="h-8 w-8 text-primary" /> },
-  ],
-  web: [
-    { name: "HTML/CSS", level: 90, icon: <Code className="h-8 w-8 text-primary" /> },
-    { name: "DBMS", level: 85, icon: <Database className="h-8 w-8 text-primary" /> },
-  ],
+    programming: [
+        { name: "Python", level: 90, icon: <PythonIcon /> },
+        { name: "C/C++", level: 85, icon: <CppIcon /> },
+        { name: "Java", level: 80, icon: <Coffee className="h-8 w-8 text-primary" /> },
+      ],
+      web: [
+        { name: "HTML/CSS", level: 90, icon: <Code className="h-8 w-8 text-primary" /> },
+        { name: "DBMS", level: 85, icon: <Database className="h-8 w-8 text-primary" /> },
+      ],
   tools: [
-    { name: "MS Office", level: 95, icon: <Briefcase className="h-8 w-8 text-primary" /> },
-    { name: "Project Management", level: 80, icon: <Cpu className="h-8 w-8 text-primary" /> },
-    { name: "Hardware", level: 75, icon: <HardDrive className="h-8 w-8 text-primary" /> },
+    { name: "MS Office", level: 95 },
+    { name: "Project Management", level: 80, icon: <Briefcase className="h-8 w-8 text-primary" /> }, // Assuming Briefcase is suitable for Project Management
+    { name: "Hardware", level: 75, icon: <Cpu className="h-8 w-8 text-primary" /> }, // Using Cpu for Hardware
   ],
   soft: [
     { name: "Team Work", level: 95, icon: <Users className="h-8 w-8 text-primary" /> },
     { name: "Time Management", level: 90, icon: <Calendar className="h-8 w-8 text-primary" /> },
-    { name: "Problem Solving", level: 85, icon: <Lightbulb className="h-8 w-8 text-primary" /> },
+    { name: "Problem Solving", level: 85, icon: <Lightbulb className="h-8 w-8 text-primary" /> }, // Using Lightbulb for Problem Solving
   ],
 };
 
@@ -181,10 +214,6 @@ export default function Home() {
                     <div className="space-y-6">
                         <h3 className="text-2xl font-headline text-accent text-center">Web & Database</h3>
                         {skills.web.map(skill => <SkillCard key={skill.name} {...skill} />)}
-                    </div>
-                    <div className="space-y-6">
-                        <h3 className="text-2xl font-headline text-accent text-center">Tools & Methodologies</h3>
-                        {skills.tools.map(skill => <SkillCard key={skill.name} {...skill} />)}
                     </div>
                     <div className="space-y-6">
                         <h3 className="text-2xl font-headline text-accent text-center">Soft Skills</h3>
