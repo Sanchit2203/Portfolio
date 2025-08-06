@@ -24,7 +24,12 @@ export default function Header() {
         const handleScroll = () => {
             setScrolled(window.scrollY > 10);
 
-            const sections = navLinks.map(link => document.querySelector(link.href));
+            const sections: (Element | null)[] = navLinks.map(link => {
+                try {
+                    return document.querySelector(link.href);
+                } catch (e) {
+                    return null;
+                }});
             const scrollPosition = window.scrollY + 100; // Adjust offset if needed
 
             for (const section of sections) {
