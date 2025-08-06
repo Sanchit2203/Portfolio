@@ -25,7 +25,7 @@ export default function Header() {
             setScrolled(window.scrollY > 10);
 
             const sections = navLinks.map(link => document.querySelector(link.href));
-            const scrollPosition = window.scrollY + 150;
+            const scrollPosition = window.scrollY + 100; // Adjust offset if needed
 
             for (const section of sections) {
                 if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
@@ -47,7 +47,7 @@ export default function Header() {
             <div className="container mx-auto flex items-center justify-between p-4">
                 <a href="#home" className="flex items-center gap-2 text-xl font-bold font-headline text-primary">
                     <Code2 />
-                    <span>SanchitSinha</span>
+                    <span>Sanchit</span>
                 </a>
                 <nav className="hidden md:flex items-center gap-6">
                     {navLinks.map(link => (

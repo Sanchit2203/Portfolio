@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: 'Sanchit Portfolio',
-  description: 'Portfolio of Sanchit Sinha, Computer Science Engineer',
+  description: 'Portfolio of Sanchit, Computer Science Engineer',
 };
 
 export default function RootLayout({

@@ -25,7 +25,6 @@ import {
 import AnimatedText from "@/components/animated-text";
 import SkillCard from "@/components/skill-card";
 import Header from "@/components/header";
-import ResumeEnhancer from "@/components/resume-enhancer";
 import ContactForm from "@/components/contact-form";
 import ScrollTop from "@/components/scroll-top";
 
@@ -125,7 +124,7 @@ export default function Home() {
                 <div className="absolute h-64 w-64 bg-accent rounded-full -bottom-16 -right-16 blur-3xl"></div>
             </div>
             <div className="z-10 animate-fade-in-up">
-                <h1 className="text-5xl md:text-7xl font-headline font-bold text-primary">Sanchit Sinha</h1>
+                <h1 className="text-5xl md:text-7xl font-headline font-bold text-primary">Sanchit</h1>
                 <h2 className="text-2xl md:text-3xl mt-2 text-foreground/80">Computer Science Engineer</h2>
                 <div className="mt-4">
                     <AnimatedText />
@@ -296,11 +295,6 @@ export default function Home() {
                 </Card>
             </div>
         </section>
-
-        <section id="ai-summary" className="py-20 px-4 container mx-auto animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <h2 className="text-4xl font-headline font-bold text-center mb-12 text-primary">Enhance Your Resume</h2>
-          <ResumeEnhancer />
-        </section>
       </main>
 
       <footer id="contact" className="bg-secondary py-12 px-4 animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
@@ -313,7 +307,7 @@ export default function Home() {
             <ContactForm />
           </div>
           <div className="text-center md:text-right">
-            <h3 className="text-3xl font-headline font-bold text-primary mb-4">Sanchit Sinha</h3>
+            <h3 className="text-3xl font-headline font-bold text-primary mb-4">Sanchit</h3>
             <p className="text-foreground/70 mb-6">Innovator | Developer | Problem Solver</p>
             <div className="flex justify-center md:justify-end gap-4">
               <a href="https://www.linkedin.com/in/sanchit2203" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-primary transition-colors">
