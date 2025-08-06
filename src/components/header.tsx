@@ -32,12 +32,6 @@ export default function Header() {
                 }});
             const scrollPosition = window.scrollY + 100; // Adjust offset if needed
 
-            for (const section of sections) {
-                if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
-                    setActiveSection(`#${section.id}`);
-                    break;
-                }
-            }
         };
 
         window.addEventListener('scroll', handleScroll);
