@@ -31,9 +31,8 @@ export async function sendContactEmail(
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_FROM,
+      from: input.email,
       to: process.env.EMAIL_TO,
-      replyTo: input.email,
       subject: `New message from ${input.name} via Portfolio`,
       text: input.message,
       html: `<p>You have a new message from <strong>${input.name}</strong> (${input.email}):</p><p>${input.message}</p>`,
