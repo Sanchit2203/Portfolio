@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 const words = ["Innovator", "Developer", "Problem Solver"];
 
@@ -13,8 +14,8 @@ const AnimatedText = () => {
 
     useEffect(() => {
         if (subIndex === words[index].length + 1 && !reverse) {
-            setTimeout(() => setReverse(true), 1000);
-            return;
+            const timer = setTimeout(() => setReverse(true), 1000);
+            return () => clearTimeout(timer);
         }
 
         if (subIndex === 0 && reverse) {
@@ -44,7 +45,5 @@ const AnimatedText = () => {
         </span>
     );
 };
-
-const cn = (...classes: (string | boolean | undefined)[]) => classes.filter(Boolean).join(' ');
 
 export default AnimatedText;
