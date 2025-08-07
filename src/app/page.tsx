@@ -149,11 +149,20 @@ export default function Home() {
                             <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
                         </a>
                     </Button>
-                    <a href="Sanchit Resume.pdf" download>
-                        <Button>
+                    {/* The href will be handled by the onClick function */}
+                    <a>
+                        <Button onClick={() => {
+                            // Create a temporary anchor element
+                            const link = document.createElement('a');
+                            link.href = 'Sanchit Resume.pdf'; // Use the relative path to the file in the public directory
+                            link.setAttribute('download', 'Sanchit Resume.pdf'); // Set the download attribute with the desired filename link.setAttribute('download', 'Sanchit Resume.pdf'); // Set the download attribute with the desired filename
+                            link.setAttribute('type', 'application/pdf'); // Set the MIME type
+                            document.body.appendChild(link);
+                            link.click(); // Programmatically click the link to trigger the download
+                            document.body.removeChild(link); // Remove the temporary link
+                        }}>
                             <Download className="mr-2 h-4 w-4" /> Download Resume
-                        </Button>
-                    </a>
+                        </Button></a>
                 </div>
             </div>
         </section>
