@@ -2,14 +2,11 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
 
 const words = ["Innovator", "Developer", "Problem Solver"];
 
 const AnimatedText = () => {
-    const [index, setIndex] = useState(0);
-    const [subIndex, setSubIndex] = useState(0);
-    const [reverse, setReverse] = useState(false);
+    const [currentWord, setCurrentWord] = useState('');
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -19,23 +16,46 @@ const AnimatedText = () => {
     useEffect(() => {
         if (!isMounted) return;
 
-        if (subIndex === words[index].length && !reverse) {
-            const timer = setTimeout(() => setReverse(true), 2000);
-            return () => clearTimeout(timer);
-        }
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let timeoutId: NodeJS.Timeout;
 
-        if (subIndex === 0 && reverse) {
-            setReverse(false);
-            setIndex((prev) => (prev + 1) % words.length);
-            return;
-        }
+        const type = () => {
+            const current = words[wordIndex];
+            
+            if (isDeleting) {
+                // Deleting characters
+                setCurrentWord(current.substring(0, charIndex - 1));
+                charIndex--;
+            } else {
+                // Typing characters
+                setCurrentWord(current.substring(0, charIndex + 1));
+                charIndex++;
+            }
 
-        const timeout = setTimeout(() => {
-            setSubIndex((prev) => prev + (reverse ? -1 : 1));
-        }, 150);
+            let typeSpeed = isDeleting ? 100 : 150;
 
-        return () => clearTimeout(timeout);
-    }, [subIndex, index, reverse, isMounted]);
+            if (!isDeleting && charIndex === current.length) {
+                // Pause at the end of the word
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                // Move to the next word
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500;
+            }
+
+            timeoutId = setTimeout(type, typeSpeed);
+        };
+
+        type();
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [isMounted]);
 
     if (!isMounted) {
         return <span className="text-2xl md:text-3xl font-medium text-accent font-headline">&nbsp;</span>;
@@ -43,7 +63,7 @@ const AnimatedText = () => {
 
     return (
         <span className="text-2xl md:text-3xl font-medium text-accent font-headline">
-            {`${words[index].substring(0, subIndex)}`}
+            {currentWord}
             <span className="animate-pulse">|</span>
         </span>
     );
