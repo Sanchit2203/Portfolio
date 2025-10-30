@@ -149,7 +149,7 @@ export default function Home() {
                             <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
                         </a>
                     </Button>
-                    <a href="https://drive.google.com/file/d/1b1GfaXoZTft4Hj6buOtXqUs1dkRv2KuI/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <a href="https://drive.google.com/file/d/1nxARAmsYgihgJ_azPeoEveWGkU_fQaWN/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                         <Button>
                             <Download className="mr-2 h-4 w-4" /> Download Resume
                         </Button>
