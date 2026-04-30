@@ -1,4 +1,3 @@
-
 'use client';
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -149,7 +148,7 @@ export default function Home() {
                             <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
                         </a>
                     </Button>
-                    <a href="https://drive.google.com/file/d/1aPhCUxbZU8HmoNiFXJZvdfS1NN-1sMyl/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <a href="https://drive.google.com/file/d/1JWxa7khCboCZG5ouS8EpzVKsuXbKfa2y/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                         <Button>
                             <Download className="mr-2 h-4 w-4" /> Download Resume
                         </Button>
