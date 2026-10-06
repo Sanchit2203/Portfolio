@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { BarChart3, Menu, X } from 'lucide-react';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const navLinks = [
     { href: '#home', label: 'Home' },
@@ -79,12 +80,15 @@ export default function Header() {
                         </a>
                     ))}
                 </nav>
-                <button
-                    className="lg:hidden p-2 rounded-lg hover:bg-secondary/50 transition-colors"
-                    onClick={() => setMobileOpen(!mobileOpen)}
-                >
-                    {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                </button>
+                <div className="flex items-center gap-2">
+                    <ThemeToggle />
+                    <button
+                        className="lg:hidden p-2 rounded-lg hover:bg-secondary/50 transition-colors"
+                        onClick={() => setMobileOpen(!mobileOpen)}
+                    >
+                        {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                    </button>
+                </div>
             </div>
             {/* Mobile menu */}
             <div className={cn(
