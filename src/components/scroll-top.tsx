@@ -11,23 +11,14 @@ export default function ScrollTop() {
 
     useEffect(() => {
         const toggleVisibility = () => {
-            if (window.pageYOffset > 300) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
+            setIsVisible(window.pageYOffset > 300);
         };
-
         window.addEventListener('scroll', toggleVisibility);
-
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
@@ -36,11 +27,11 @@ export default function ScrollTop() {
             size="icon"
             onClick={scrollToTop}
             className={cn(
-                "fixed bottom-8 right-8 rounded-full h-12 w-12 transition-opacity duration-300 z-50",
-                isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+                "fixed bottom-8 right-8 rounded-xl h-12 w-12 transition-all duration-300 z-50 shadow-lg shadow-primary/20 bg-primary text-primary-foreground hover:bg-primary/90",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
             )}
         >
-            <ArrowUp className="h-6 w-6" />
+            <ArrowUp className="h-5 w-5" />
         </Button>
     );
 }

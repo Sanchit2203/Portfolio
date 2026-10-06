@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 
-const words = ["Innovator", "Developer", "Problem Solver"];
+const words = ["Data Analyst", "BI Analyst", "SQL Developer", "Dashboard Builder", "Python Enthusiast"];
 
 const AnimatedText = () => {
     const [currentWord, setCurrentWord] = useState('');
@@ -23,28 +23,24 @@ const AnimatedText = () => {
 
         const type = () => {
             const current = words[wordIndex];
-            
+
             if (isDeleting) {
-                // Deleting characters
                 setCurrentWord(current.substring(0, charIndex - 1));
                 charIndex--;
             } else {
-                // Typing characters
                 setCurrentWord(current.substring(0, charIndex + 1));
                 charIndex++;
             }
 
-            let typeSpeed = isDeleting ? 100 : 150;
+            let typeSpeed = isDeleting ? 60 : 120;
 
             if (!isDeleting && charIndex === current.length) {
-                // Pause at the end of the word
-                typeSpeed = 2000;
+                typeSpeed = 2500;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
-                // Move to the next word
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500;
+                typeSpeed = 400;
             }
 
             timeoutId = setTimeout(type, typeSpeed);
@@ -58,13 +54,13 @@ const AnimatedText = () => {
     }, [isMounted]);
 
     if (!isMounted) {
-        return <span className="text-2xl md:text-3xl font-medium text-accent font-headline">&nbsp;</span>;
+        return <span className="text-2xl md:text-3xl font-medium gradient-text font-headline">&nbsp;</span>;
     }
 
     return (
-        <span className="text-2xl md:text-3xl font-medium text-accent font-headline">
+        <span className="text-2xl md:text-3xl font-medium gradient-text font-headline">
             {currentWord}
-            <span className="animate-pulse">|</span>
+            <span className="animate-pulse text-primary">|</span>
         </span>
     );
 };
