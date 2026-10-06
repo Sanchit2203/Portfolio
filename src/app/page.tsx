@@ -561,7 +561,7 @@ export default function Home() {
             <ContactForm />
           </div>
           <div className="md:text-right">
-            <h3 className="text-3xl font-headline font-bold gradient-text mb-2">Sanchit Sinha</h3>
+            <h3 className="text-3xl font-headline font-bold gradient-text mb-2">Sanchit</h3>
             <p className="text-foreground/50 mb-6">Data Analyst | BI Analyst</p>
 
             <div className="space-y-3 text-sm text-foreground/60">
@@ -585,7 +585,7 @@ export default function Home() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-border/20">
-              <p className="text-xs text-foreground/30">© {new Date().getFullYear()} Sanchit Sinha. All Rights Reserved.</p>
+              <p className="text-xs text-foreground/30">© {new Date().getFullYear()} Sanchit. All Rights Reserved.</p>
             </div>
           </div>
         </div>
