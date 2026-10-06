@@ -29,7 +29,6 @@ import {
 import AnimatedText from "@/components/animated-text";
 import SkillCard from "@/components/skill-card";
 import Header from "@/components/header";
-import ContactForm from "@/components/contact-form";
 import ScrollTop from "@/components/scroll-top";
 
 /* ─── Data ─── */
@@ -251,7 +250,7 @@ export default function Home() {
               <a href="mailto:sanchitsinha14@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" /> sanchitsinha14@gmail.com
               </a>
-              <a href="tel:+919267906320" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <a href="https://wa.me/919267906320" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" /> +91-9267906320
               </a>
               <span className="flex items-center gap-2">
@@ -554,11 +553,10 @@ export default function Home() {
       <footer id="contact" className="bg-card/50 border-t border-border/30 py-16 px-4">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-5xl">
           <div>
-            <h3 className="text-3xl font-headline font-bold gradient-text mb-2">Let&apos;s Connect</h3>
+            <h3 className="text-3xl font-headline font-bold gradient-text mb-2">&quot;Without data, you&apos;re just another person with an opinion.&quot;</h3>
             <p className="text-foreground/50 mb-8">
-              Have a data project or opportunity? I&apos;d love to hear from you.
+              — W. Edwards Deming
             </p>
-            <ContactForm />
           </div>
           <div className="md:text-right">
             <h3 className="text-3xl font-headline font-bold gradient-text mb-2">Sanchit</h3>
@@ -568,7 +566,7 @@ export default function Home() {
               <a href="mailto:sanchitsinha14@gmail.com" className="flex items-center gap-2 md:justify-end hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" /> sanchitsinha14@gmail.com
               </a>
-              <a href="tel:+919267906320" className="flex items-center gap-2 md:justify-end hover:text-primary transition-colors">
+              <a href="https://wa.me/919267906320" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 md:justify-end hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" /> +91-9267906320
               </a>
             </div>
